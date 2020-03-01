@@ -9,10 +9,24 @@
   </head>
 
   <body>
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
-  <% end %>
-  
+    <header class="navbar navbar-inverse">
+      <div class="container">
+        <%= link_to "サンプルアプリケーション（仮）", '/', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+              <li><%= link_to 'ログアウト', logout_path, method: :delete  %></li>
+            <% else %>
+              <li><%= link_to 'ログイン', login_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
