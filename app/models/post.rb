@@ -7,4 +7,9 @@ class Post < ApplicationRecord
     belongs_to :user
 
     mount_uploader :image, ImageUploader
+
+    def delete_with_image
+        self.destroy
+        Dir.rmdir("#{Rails.root.to_s}/public/uploads/post/image/#{self.id}")
+    end
 end

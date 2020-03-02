@@ -29,6 +29,13 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.posts.map { |post| post.delete_with_image }
+        user.destroy
+        redirect_to '/'
+      end
+
     private
 
     def user_params

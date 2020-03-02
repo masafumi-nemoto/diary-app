@@ -22,6 +22,7 @@
           </div>
 
           <%= f.submit "保存", class: 'btn-block btn-white' %>
+          <%= link_to '退会', @user, class: 'btn btn-danger', method: :delete, data: { confirm: '本当に退会しますか？' } %>
           
         <% end %>
       </div>
