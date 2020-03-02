@@ -34,8 +34,7 @@ class PostsController < ApplicationController
 
     def destroy
         post = Post.find(params[:id])
-        post.destroy
-        Dir.rmdir("#{Rails.root.to_s}/public/uploads/post/image/#{post.id}")
+        post.delete_with_image()
         flash.now[:danger] = "投稿を削除しました"
         redirect_to '/'
     end
