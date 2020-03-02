@@ -1,12 +1,9 @@
 html {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
 body {
     width: 100%;
-    height: 100%;
     background-color: #EEEEEE;
 }
 
@@ -14,13 +11,6 @@ body {
     top: 200px;
     height: 200px;
     background-color: white;
-}
-
-.alert {
-    margin-bottom: 0px;
-    position: fixed;
-    width: 100%;
-    z-index: 10000;
 }
 
 #logo {
@@ -37,4 +27,8 @@ body {
 #logo:hover {
     color: #fff;
     text-decoration: none;
+}
+
+.thum_image {
+    max-height: 100px;
 }
