@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
     get 'sessions/new'
     get '/', to: 'pages#index'
+    post '/', to: 'pages#index'
   
     get    '/login',   to: 'sessions#new'
     post   '/login',   to: 'sessions#create'
