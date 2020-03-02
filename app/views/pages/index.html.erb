@@ -19,6 +19,9 @@
                 <td><%= image_tag post.image.url, class: 'thum_image' %></td>
                 <td><%= link_to post.title, edit_post_path(post.id) %></td>
                 <td><%= post.description %></td>
+                <td>
+                  <%= link_to '削除', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'この投稿を削除しますか？' } %>
+                </td>
               </tr>
             <% end %>
           </tbody>
