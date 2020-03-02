@@ -17,7 +17,7 @@
               <tr>
                 <th><%= post.id %></th>
                 <td><%= image_tag post.image.url, class: 'thum_image' %></td>
-                <td><%= post.title %></td>
+                <td><%= link_to post.title, edit_post_path(post.id) %></td>
                 <td><%= post.description %></td>
               </tr>
             <% end %>
